@@ -1,9 +1,7 @@
 package spam.blocker
 
 import androidx.compose.runtime.Immutable
-import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import spam.blocker.ui.history.CallViewModel
 import spam.blocker.ui.history.SmsViewModel
@@ -18,8 +16,6 @@ import spam.blocker.util.PermissionChain
 @Immutable
 object G {
     val globallyEnabled : MutableState<Boolean> = mutableStateOf(false)
-
-    val themeType : MutableIntState  = mutableIntStateOf(0)
 
     val callVM : CallViewModel = CallViewModel()
     val smsVM : SmsViewModel = SmsViewModel()

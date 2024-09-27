@@ -70,7 +70,6 @@ class MainActivity : ComponentActivity() {
         Util.setLocale(ctx, spf.getLanguage())
 
         G.globallyEnabled.value = spf.isGloballyEnabled()
-        G.themeType.intValue = spf.getThemeType()
 
         val lastTab = spf.getActiveTab()
 
@@ -117,11 +116,7 @@ class MainActivity : ComponentActivity() {
         G.smsVM.reload(ctx)
 
         setContent {
-            val isDarkTheme = when (G.themeType.intValue) {
-                1 -> false
-                2 -> true
-                else -> isSystemInDarkTheme()
-            }
+            val isDarkTheme = isSystemInDarkTheme()
             AppTheme(darkTheme = isDarkTheme) {
                 // fix white statusbar text when forced to white theme
                 WindowCompat.getInsetsController(window, LocalView.current)

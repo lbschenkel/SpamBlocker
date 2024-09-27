@@ -100,18 +100,6 @@ class RegexOptions {
 }
 
 @Serializable
-class Theme {
-    var type = 0
-    fun load(ctx: Context) {
-        type = Global(ctx).getThemeType()
-    }
-
-    fun apply(ctx: Context) {
-        Global(ctx).setThemeType(type)
-    }
-}
-
-@Serializable
 class Language {
     var lang = ""
     fun load(ctx: Context) {
@@ -348,7 +336,6 @@ class Configs {
     val global = Global()
     val historyOptions = HistoryOptions()
     val regexOptions = RegexOptions()
-    val theme = Theme()
     val language = Language()
 
     val contacts = Contact()
@@ -372,7 +359,6 @@ class Configs {
         global.load(ctx)
         historyOptions.load(ctx)
         regexOptions.load(ctx)
-        theme.load(ctx)
         language.load(ctx)
 
         contacts.load(ctx)
@@ -398,7 +384,6 @@ class Configs {
         global.apply(ctx)
         historyOptions.apply(ctx)
         regexOptions.apply(ctx)
-        theme.apply(ctx)
         language.apply(ctx)
 
         contacts.apply(ctx)

@@ -40,17 +40,11 @@ class CrashReportActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
-        G.themeType.intValue = Global(this).getThemeType()
-
         val ctx = this
 
         setContent {
             AppTheme(
-                darkTheme = when (G.themeType.intValue) {
-                    1 -> false
-                    2 -> true
-                    else -> isSystemInDarkTheme()
-                }
+                darkTheme = isSystemInDarkTheme()
             ) {
                 Scaffold(
                     modifier = M
