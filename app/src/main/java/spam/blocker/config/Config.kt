@@ -100,18 +100,6 @@ class RegexOptions {
 }
 
 @Serializable
-class Language {
-    var lang = ""
-    fun load(ctx: Context) {
-        lang = Global(ctx).getLanguage()
-    }
-
-    fun apply(ctx: Context) {
-        Global(ctx).setLanguage(lang)
-    }
-}
-
-@Serializable
 class Contact {
     var enabled = false
     var isExcusive = false
@@ -336,7 +324,6 @@ class Configs {
     val global = Global()
     val historyOptions = HistoryOptions()
     val regexOptions = RegexOptions()
-    val language = Language()
 
     val contacts = Contact()
     val stir = STIR()
@@ -359,7 +346,6 @@ class Configs {
         global.load(ctx)
         historyOptions.load(ctx)
         regexOptions.load(ctx)
-        language.load(ctx)
 
         contacts.load(ctx)
         stir.load(ctx)
@@ -384,7 +370,6 @@ class Configs {
         global.apply(ctx)
         historyOptions.apply(ctx)
         regexOptions.apply(ctx)
-        language.apply(ctx)
 
         contacts.apply(ctx)
         stir.apply(ctx)

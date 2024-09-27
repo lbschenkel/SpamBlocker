@@ -81,9 +81,6 @@ class Global(ctx: Context) : SharedPref(ctx) {
     fun isSmsEnabled(): Boolean { return readBoolean(Def.SETTING_SMS_ENABLED, true) }
     fun setSmsEnabled(enabled: Boolean) { writeBoolean(Def.SETTING_SMS_ENABLED, enabled) }
 
-    fun getLanguage(): String { return readString(Def.SETTING_LANGUAGE, "") }
-    fun setLanguage(lang: String) { writeString(Def.SETTING_LANGUAGE, lang) }
-
     fun getActiveTab(): String { return readString(Def.SETTING_ACTIVE_TAB, "setting") }
     fun setActiveTab(tab: String) { writeString(Def.SETTING_ACTIVE_TAB, tab) }
 

@@ -66,9 +66,6 @@ class MainActivity : ComponentActivity() {
         val ctx = this
         val spf = Global(ctx)
 
-        // language
-        Util.setLocale(ctx, spf.getLanguage())
-
         G.globallyEnabled.value = spf.isGloballyEnabled()
 
         val lastTab = spf.getActiveTab()

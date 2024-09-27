@@ -34,7 +34,6 @@ import spam.blocker.ui.setting.bot.BotHeader
 import spam.blocker.ui.setting.bot.BotList
 import spam.blocker.ui.setting.misc.About
 import spam.blocker.ui.setting.misc.BackupRestore
-import spam.blocker.ui.setting.misc.Language
 import spam.blocker.ui.setting.quick.BlockType
 import spam.blocker.ui.setting.quick.Contacts
 import spam.blocker.ui.setting.quick.Dialed
@@ -187,7 +186,6 @@ fun SettingScreen() {
                     Column(
                         verticalArrangement = Arrangement.spacedBy(0.dp),
                     ) {
-                        Language()
                         BackupRestore()
                         About()
                     }
